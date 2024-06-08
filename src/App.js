@@ -15,6 +15,11 @@ import './App.css'
 class App extends Component {
   state = {
     cartList: [],
+    disp: false,
+  }
+
+  changeDisp = () => {
+    this.setState({disp: true})
   }
 
   removeAllCartItems = () => {
@@ -32,7 +37,7 @@ class App extends Component {
     const updatedCart = cartList.map(item => {
       if (item.id === id) {
         let {quantity} = item
-        quantity = quantity + 1
+        quantity += 1
         return {...item, quantity}
       }
       return item
@@ -47,7 +52,7 @@ class App extends Component {
       const updatedCart = cartList.map(item => {
         if (item.id === id) {
           let {quantity} = item
-          quantity = quantity - 1
+          quantity -= 1
           return {...item, quantity}
         }
         return item
@@ -65,7 +70,7 @@ class App extends Component {
       const updatedCart = cartList.map(item => {
         if (item.id === product.id) {
           let {quantity} = item
-          quantity = quantity + 1
+          quantity += 1
           return {...item, quantity}
         }
         return item
@@ -77,12 +82,14 @@ class App extends Component {
   }
 
   render() {
-    const {cartList} = this.state
+    const {cartList, disp} = this.state
 
     return (
       <CartContext.Provider
         value={{
           cartList,
+          disp,
+          changeDisp: this.changeDisp,
           removeAllCartItems: this.removeAllCartItems,
           addCartItem: this.addCartItem,
           removeCartItem: this.removeCartItem,

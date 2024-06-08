@@ -26,7 +26,13 @@ const Cart = () => (
               <div className="cart-content-container">
                 <div>
                   <h1 className="cart-heading">My Cart</h1>
-                  <button onClick={onClickRemove}>Remove All</button>
+                  <button
+                    className="cart-remove-all"
+                    type="button"
+                    onClick={onClickRemove}
+                  >
+                    Remove All
+                  </button>
                 </div>
                 <CartListView />
                 <CartSummary />

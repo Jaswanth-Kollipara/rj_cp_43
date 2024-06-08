@@ -126,6 +126,8 @@ class ProductItemDetails extends Component {
           totalReviews,
         } = productData
         const {addCartItem} = value
+        const minus = <BsDashSquare color="#52606D" size={12} />
+        const plus = <BsPlusSquare color="#52606D" size={12} />
         const onClickAddToCart = () => {
           addCartItem({...productData, quantity})
         }
@@ -165,7 +167,7 @@ class ProductItemDetails extends Component {
                     onClick={this.onDecrementQuantity}
                     data-testid="minus"
                   >
-                    <BsDashSquare className="quantity-controller-icon" />
+                    {minus}
                   </button>
                   <p className="quantity">{quantity}</p>
                   <button
@@ -174,7 +176,7 @@ class ProductItemDetails extends Component {
                     onClick={this.onIncrementQuantity}
                     data-testid="plus"
                   >
-                    <BsPlusSquare className="quantity-controller-icon" />
+                    {plus}
                   </button>
                 </div>
                 <button

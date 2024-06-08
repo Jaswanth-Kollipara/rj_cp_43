@@ -38,3 +38,9 @@
 }
 
 /* Write your CSS here */
+.cart-remove-all {
+  text-align: right;
+  border: none;
+  color: blue;
+  background-color: transparent;
+}

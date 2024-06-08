@@ -1,1 +1,29 @@
-/* Write your CSS here */
+.login-button {
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 14px;
+  color: #ffffff;
+  height: 40px;
+  width: 100%;
+  background-color: #0b69ff;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.con-summary {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.head-sum {
+  font-size: 20px;
+}
+
+.p-sum {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
